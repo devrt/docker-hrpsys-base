@@ -1,5 +1,7 @@
 {
   "run_list": [
-    "recipe[hrpsys-base]"
+    "recipe[hrpsys-base]",
+    "recipe[omniorbpy]",
+    "recipe[openrtm-aist-python]"
   ]
 } 

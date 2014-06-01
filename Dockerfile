@@ -13,7 +13,7 @@ RUN mkdir -p /var/run/sshd
 RUN echo 'root:devrt' | chpasswd
 
 ADD . /chef
-RUN cd /chef && /opt/chef/embedded/bin/berks install --path /chef/cookbooks
+RUN cd /chef && /opt/chef/embedded/bin/berks vendor /chef/cookbooks
 RUN chef-solo -c /chef/solo.rb -j /chef/solo.json
 
 ADD sshd.conf /etc/supervisor.d/sshd.conf
